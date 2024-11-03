@@ -9,18 +9,16 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('https://media.istockphoto.com/id/1364644552/photo/valentines-shiny-pink-glitter-background-with-defocused-abstract-lights.jpg?s=612x612&w=0&k=20&c=NTgO61YFYP8YoU0D66u65_d9vW1ZhwwX7Mv4fhLxJtw='); /* Background image URL */
-            background-size: cover; /* Ensure the background covers the whole page */
-            background-position: center; /* Center the background image */
-            height: 100vh; /* Full height of the viewport */
+            background-image: url('https://media.istockphoto.com/id/1364644552/photo/valentines-shiny-pink-glitter-background-with-defocused-abstract-lights.jpg?s=612x612&w=0&k=20&c=NTgO61YFYP8YoU0D66u65_d9vW1ZhwwX7Mv4fhLxJtw='); 
+            background-size: cover; 
+            height: 100vh; 
             display: flex;
             justify-content: center;
             align-items: center;
         }
         .container {
             max-width: 600px;
-            margin: 20px;
-            background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background for readability */
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 5px;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -47,35 +45,26 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        button:hover {
-            background-color: #45a049;
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Miss Know It All</h1>
         <h2>Your Go-To Problem Solver</h2>
-        <p>Welcome to the Miss Know It All Column! Here, I help you solve your everyday problems by providing advice, insights, and answers to your questions. Whether it's about school, friendships, or anything else on your mind, I'm here to lend a hand!</p>
         <form id="message-form">
             <label for="to_name">Your Name:</label>
             <input type="text" id="to_name" required>
-
             <label for="from_email">Your Email:</label>
             <input type="email" id="from_email" required>
-
             <label for="message">Your Message:</label>
             <textarea id="message" rows="5" required></textarea>
-
             <button type="submit">Send Message</button>
         </form>
     </div>
 
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
-        (function() {
-            emailjs.init('oLM4xowpzvnN0Y1n1'); // Your public key
-        })();
+        emailjs.init('oLM4xowpzvnN0Y1n1'); // Your public key
 
         document.getElementById('message-form').addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent the default form submission
