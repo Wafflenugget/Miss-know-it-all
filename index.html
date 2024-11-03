@@ -9,15 +9,24 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-image: url('https://media.istockphoto.com/id/1364644552/photo/valentines-shiny-pink-glitter-background-with-defocused-abstract-lights.jpg?s=612x612&w=0&k=20&c=NTgO61YFYP8YoU0D66u65_d9vW1ZhwwX7Mv4fhLxJtw='); /* Background image URL */
+            background-size: cover; /* Ensure the background covers the whole page */
+            background-position: center; /* Center the background image */
+            height: 100vh; /* Full height of the viewport */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .container {
             max-width: 600px;
-            margin: 20px auto;
-            background: white;
+            margin: 20px;
+            background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background for readability */
             border-radius: 5px;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
         }
         label {
             display: block;
@@ -46,6 +55,8 @@
 <body>
     <div class="container">
         <h1>Miss Know It All</h1>
+        <h2>Your Go-To Problem Solver</h2>
+        <p>Welcome to the Miss Know It All Column! Here, I help you solve your everyday problems by providing advice, insights, and answers to your questions. Whether it's about school, friendships, or anything else on your mind, I'm here to lend a hand!</p>
         <form id="message-form">
             <label for="to_name">Your Name:</label>
             <input type="text" id="to_name" required>
@@ -81,6 +92,7 @@
             emailjs.send(serviceID, templateID, templateParams)
                 .then(function() {
                     alert('Your letter has been sent!');
+                    document.getElementById('message-form').reset(); // Reset the form
                 }, function(error) {
                     alert('Failed to send email: ' + JSON.stringify(error));
                 });
