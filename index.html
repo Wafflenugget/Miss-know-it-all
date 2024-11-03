@@ -78,7 +78,7 @@
         })();
 
         document.getElementById('message-form').addEventListener('submit', function(event) {
-            event.preventDefault();
+            event.preventDefault(); // Prevent the default form submission
 
             const serviceID = 'service_hi4zevi'; // Your service ID
             const templateID = 'template_nj9xvd7'; // Your template ID
@@ -90,14 +90,14 @@
             };
 
             emailjs.send(serviceID, templateID, templateParams)
-                .then(function() {
+                .then(function(response) {
                     alert('Your letter has been sent!');
                     document.getElementById('message-form').reset(); // Reset the form
-                }, function(error) {
+                })
+                .catch(function(error) {
+                    console.error('Error sending email:', error); // Log the error to the console
                     alert('Failed to send email: ' + JSON.stringify(error));
                 });
-
-            emailjs.send("service_hi4zevi","template_nj9xvd7");
         });
     </script>
 </body>
