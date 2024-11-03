@@ -98,6 +98,13 @@
                     console.error('Error sending email:', error); // Log the error to the console
                     alert('Failed to send email: ' + JSON.stringify(error));
                 });
+
+            const templateParams = {
+    to_name: document.getElementById('to_name').value,
+    from_email: document.getElementById('from_email').value,
+    message: document.getElementById('message').value,
+};
+
         });
     </script>
 </body>
