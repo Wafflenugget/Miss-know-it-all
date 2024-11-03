@@ -22,3 +22,24 @@ document.getElementById('poster-section').onclick = function() {
 ├── index.html        # Main HTML file (the homepage)
 ├── styles.css        # CSS file for styling
 └── script.js         # JavaScript file for interactivity
+
+const serviceID = 'service_hi4zevi'; 
+const templateID = 'template_nj9xvd7';  
+const publicKey = 'oLM4xowpzvnN0Y1n1'; 
+
+document.getElementById('problemForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const templateParams = {
+        from_email: this.from_email.value,
+        message: this.message.value,
+    };
+
+    emailjs.send(serviceID, templateID, templateParams, publicKey)
+        .then(function() {
+            alert('Email sent successfully!');
+        }, function(error) {
+            alert('Failed to send email: ' + JSON.stringify(error));
+        });
+});
+
